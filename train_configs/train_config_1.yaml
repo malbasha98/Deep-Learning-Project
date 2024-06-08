@@ -1,0 +1,33 @@
+backbone: "vgg19"
+
+batch_size: 16
+epochs: 40
+
+optimizer:
+  name: "adam"
+  init_lr: 0.001
+
+loss: 'bce'
+metric: 'iou'
+
+augmentations:
+  flip: 0.5
+  horizontal_flip: 0.5
+  vertical_flip: 0.2
+
+callbacks:
+  early_stopping:
+    patience: 5
+    monitor: 'val_loss'
+    mode: 'min'
+  reduce_lr_on_plateau:
+    patience: 3
+    monitor: 'val_loss'
+    mode: 'min'
+    factor: 0.1
+  save_model:
+    monitor: 'val_loss'
+    mode: 'min'
+    unet_weights_file: "train_config_1.h5"
+  csv_logger:
+    output_csv_file: "train_config_1.csv"
