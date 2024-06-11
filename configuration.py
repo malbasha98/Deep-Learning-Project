@@ -8,9 +8,9 @@ import albumentations as A
 IMG_HEIGHT = 224
 IMG_WIDTH = 224
 
-TEST_FIRE_SP_DIR = os.path.join(os.getcwd(), "data/eval/superpixels/isolated-superpixels/test/fire")
-TEST_NOFIRE_SP_DIR = os.path.join(os.getcwd(), "data/eval/superpixels/isolated-superpixels/test/nofire")
-TEST_IMAGES_DIR = os.path.join(os.getcwd(), "data/eval/superpixels/original-full-images/test")
+TEST_FIRE_SP_DIR = os.path.join(os.getcwd(), "data/eval/superpixels/isolated-superpixels/fire")
+TEST_NOFIRE_SP_DIR = os.path.join(os.getcwd(), "data/eval/superpixels/isolated-superpixels/nofire")
+TEST_IMAGES_DIR = os.path.join(os.getcwd(), "data/eval/superpixels/original-full-images")
 
 OUTPUT_DIR = os.path.join(os.getcwd(), "outputs")
 if not os.path.exists(OUTPUT_DIR):

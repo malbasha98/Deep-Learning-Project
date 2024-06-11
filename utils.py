@@ -60,11 +60,10 @@ def extract_bboxes(mask):
 
 
 def compute_sp_iou(true_sp, pred_sp):
-    true_sp = true_sp.flatten() / 255
-    pred_sp = pred_sp.flatten() / 255
+    true_sp = true_sp.flatten()
+    pred_sp = pred_sp.flatten()
 
     intersection = len(np.where(true_sp * pred_sp > 0)[0])
     union = np.sum(np.logical_or(true_sp, pred_sp))
-    print(union)
 
     return intersection / union
